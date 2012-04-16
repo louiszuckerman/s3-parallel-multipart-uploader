@@ -1,0 +1,17 @@
+s3-multiputter.py
+
+Description:                                                                                                                                                                
+                                                                                                                                                                            
+Reads a huge file (or device) and uploads to Amazon S3.                                                                                                                     
+Multiple workers are launched which read & send in parallel.                                                                                                                
+Workers are allocated one chunk of the file at a time.                                                                                                                      
+                                                                                                                                                                            
+Usage:                                                                                                                                                                      
+                                                                                                                                                                            
+s3-multiputter.py <BUCKET> <FILE> <THREADS> <CHUNKSIZE>
+
+BUCKET: The S3 bucket name to upload to
+FILE: The source file to upload
+THREADS: Number of parallel uploader threads
+CHUNKSIZE: Size (MB) of each chunk
+
