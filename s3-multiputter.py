@@ -17,6 +17,12 @@ FILE: The source file to upload
 THREADS: Number of parallel uploader threads
 CHUNKSIZE: Size (MB) of each chunk
 
+Prerequisites:
+
+Boto library must be installed & configured with AWS creds
+http://code.google.com/p/boto/wiki/BotoConfig
+
+
 Created on Aug 30, 2011
 
 @author: louis zuckerman
