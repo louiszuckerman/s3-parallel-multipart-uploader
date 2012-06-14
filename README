@@ -15,7 +15,22 @@ FILE: The source file to upload
 THREADS: Number of parallel uploader threads
 CHUNKSIZE: Size (MB) of each chunk
 
+This script was designed for uploading very large block 
+device images to S3.  The problem it aims to solve is moving
+an EBS volume from one AWS region to another using S3 as the
+transport medium.
+
+Launch a hefty EC2 instance like a c1.xlarge, attach your EBS
+volume(s) to it, and use s3-multiputter.py to upload the block
+device to S3 -- it can read directly from /dev/sdxN devices.
+
+You can upload directly from an EC2 instance to the S3 service 
+in another region, or you can upload from an EC2 instance to 
+the local S3 service and use S3 copy to move your image file 
+from one S3 region to another.
+
 Prerequisites:
 
 Boto library must be installed & configured with AWS creds
 http://code.google.com/p/boto/wiki/BotoConfig
+
