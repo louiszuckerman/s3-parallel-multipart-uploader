@@ -52,6 +52,7 @@ class MPUploader(Process):
     def send_part(self, partno):
         while True:
             try:
+                self.buffer.seek(0)
                 self.multipart.upload_part_from_file(self.buffer, partno+1)
                 break
             except Exception as s3err:
